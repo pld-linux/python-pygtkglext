@@ -13,7 +13,6 @@ BuildRequires:	gtkglext-devel >= 1.0.0
 BuildRequires:	pkgconfig
 BuildRequires:	python-devel >= 2.2
 BuildRequires:	python-pygtk-devel >= 2.0.0
-BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
 Requires:	python-pygtk-gtk >= 2.0.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
