@@ -2,20 +2,20 @@
 Summary:	Python bindings for GtkGLExt library
 Summary(pl):	Wi±zania Pythona do biblioteki GtkGLExt
 Name:		python-pygtkglext
-Version:	0.99.0
+Version:	0.99.1
 Release:	1
 License:	LGPL
 Group:		Libraries/Python
 Source0:	http://dl.sourceforge.net/gtkglext/pygtkglext-%{version}.tar.bz2
-# Source0-md5:	202ab76f15ffacad8c81ad86e0df28c6
+# Source0-md5:	f2a242d31dc5c5399eff8ae1d1b3ce5b
 URL:		http://gtkglext.sourceforge.net/
 BuildRequires:	gtkglext-devel >= 1.0.0
 BuildRequires:	pkgconfig
 BuildRequires:	python-devel >= 2.2
-BuildRequires:	python-pygtk-devel >= 1.99.16
+BuildRequires:	python-pygtk-devel >= 1.99.17
 BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
-Requires:	python-pygtk-gtk >= 1.99.16
+Requires:	python-pygtk-gtk >= 1.99.17
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_noautoreqdep	libGL.so.1 libGLU.so.1
@@ -33,7 +33,7 @@ Summary:	Development files for Python bindings for GtkGLExt
 Summary(pl):	Pliki programistyczne wi±zañ Pythona do GtkGLExt
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}
-Requires:	python-pygtk-devel >= 1.99.16
+Requires:	python-pygtk-devel >= 1.99.17
 
 %description devel
 Development files for Python bindings for GtkGLExt.
@@ -54,6 +54,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+rm -f $RPM_BUILD_ROOT%{py_sitedir}/gtk-2.0/gtk/g[dt]kgl/*.{la,py}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
