@@ -9,6 +9,7 @@ Group:		Libraries/Python
 Source0:	http://dl.sourceforge.net/gtkglext/pygtkglext-%{version}.tar.bz2
 # Source0-md5:	b34d61b427e5ade8791b6e4441e85793
 URL:		http://gtkglext.sourceforge.net/
+BuildRequires:	automake
 BuildRequires:	gtkglext-devel >= 1.0.0
 BuildRequires:	pkgconfig
 BuildRequires:	python-devel >= 2.2
@@ -45,6 +46,7 @@ Pliki programistyczne wi±zañ Pythona do GtkGLExt.
 %setup -q -n pygtkglext-%{version}
 
 %build
+cp -f /usr/share/automake/config.* .
 %configure
 
 %{__make}
