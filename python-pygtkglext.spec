@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.python
 Summary:	Python bindings for GtkGLExt library
 Summary(pl):	Wi±zania Pythona do biblioteki GtkGLExt
 Name:		python-pygtkglext
