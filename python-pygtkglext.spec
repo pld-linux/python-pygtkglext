@@ -31,7 +31,7 @@ dla GTK.
 Summary:	Development files for Python bindings for GtkGLExt
 Summary(pl):	Pliki programistyczne wi±zañ Pythona do GtkGLExt
 Group:		Development/Languages/Python
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Requires:	python-pygtk-devel >= 2.0.0
 
 %description devel
