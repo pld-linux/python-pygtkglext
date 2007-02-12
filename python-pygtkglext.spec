@@ -1,5 +1,5 @@
 Summary:	Python bindings for GtkGLExt library
-Summary(pl):	Wi±zania Pythona do biblioteki GtkGLExt
+Summary(pl.UTF-8):   WiÄ…zania Pythona do biblioteki GtkGLExt
 Name:		python-pygtkglext
 Version:	1.0.1
 Release:	4
@@ -23,13 +23,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 PyGtkGLExt is Python language bindings for GtkGLExt, OpenGL Extension
 to GTK.
 
-%description -l pl
-PyGtkGLExt to wi±zania jêzyka Python do GtkGLExt - rozszerzenia OpenGL
+%description -l pl.UTF-8
+PyGtkGLExt to wiÄ…zania jÄ™zyka Python do GtkGLExt - rozszerzenia OpenGL
 dla GTK.
 
 %package devel
 Summary:	Development files for Python bindings for GtkGLExt
-Summary(pl):	Pliki programistyczne wi±zañ Pythona do GtkGLExt
+Summary(pl.UTF-8):   Pliki programistyczne wiÄ…zaÅ„ Pythona do GtkGLExt
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}-%{release}
 Requires:	python-pygtk-devel >= 2.0.0
@@ -37,8 +37,8 @@ Requires:	python-pygtk-devel >= 2.0.0
 %description devel
 Development files for Python bindings for GtkGLExt.
 
-%description devel -l pl
-Pliki programistyczne wi±zañ Pythona do GtkGLExt.
+%description devel -l pl.UTF-8
+Pliki programistyczne wiÄ…zaÅ„ Pythona do GtkGLExt.
 
 %prep
 %setup -q -n pygtkglext-%{version}
