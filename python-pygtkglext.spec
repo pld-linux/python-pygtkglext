@@ -1,5 +1,5 @@
 Summary:	Python bindings for GtkGLExt library
-Summary(pl.UTF-8):   Wiązania Pythona do biblioteki GtkGLExt
+Summary(pl.UTF-8):	Wiązania Pythona do biblioteki GtkGLExt
 Name:		python-pygtkglext
 Version:	1.0.1
 Release:	4
@@ -29,7 +29,7 @@ dla GTK.
 
 %package devel
 Summary:	Development files for Python bindings for GtkGLExt
-Summary(pl.UTF-8):   Pliki programistyczne wiązań Pythona do GtkGLExt
+Summary(pl.UTF-8):	Pliki programistyczne wiązań Pythona do GtkGLExt
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}-%{release}
 Requires:	python-pygtk-devel >= 2.0.0
