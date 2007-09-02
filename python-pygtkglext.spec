@@ -2,7 +2,7 @@ Summary:	Python bindings for GtkGLExt library
 Summary(pl.UTF-8):	Wiązania Pythona do biblioteki GtkGLExt
 Name:		python-pygtkglext
 Version:	1.1.0
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Libraries/Python
 Source0:	http://dl.sourceforge.net/gtkglext/pygtkglext-%{version}.tar.bz2
@@ -53,7 +53,8 @@ cp -f /usr/share/automake/config.* .
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	pythondir=%{py_sitedir}
 
 rm -f $RPM_BUILD_ROOT%{py_sitedir}/gtk-2.0/gtk/g[dt]kgl/*.{la,py}
 
@@ -65,8 +66,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog README
 %dir %{py_sitedir}/gtk-2.0/gtk/g[dt]kgl
 %attr(755,root,root) %{py_sitedir}/gtk-2.0/gtk/g[dt]kgl/*.so
-%dir %{py_sitescriptdir}/gtk-2.0/gtk/g[dt]kgl
-%{py_sitescriptdir}/gtk-2.0/gtk/g[dt]kgl/*.py[co]
+%{py_sitedir}/gtk-2.0/gtk/g[dt]kgl/*.py[co]
 %{_datadir}/pygtk/2.0/defs/*
 
 %files devel
