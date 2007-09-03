@@ -57,7 +57,6 @@ Przykładowe programy do PyGtkGLExt.
 %setup -q -n pygtkglext-%{version}
 
 %build
-cp -f /usr/share/automake/config.* .
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
