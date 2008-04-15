@@ -82,15 +82,21 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README
-%dir %{py_sitedir}/gtk-2.0/gtk/g[dt]kgl
-%attr(755,root,root) %{py_sitedir}/gtk-2.0/gtk/g[dt]kgl/*.so
-%{py_sitedir}/gtk-2.0/gtk/g[dt]kgl/*.py[co]
-%{_datadir}/pygtk/2.0/defs/*
+%dir %{py_sitedir}/gtk-2.0/gtk/gdkgl
+%attr(755,root,root) %{py_sitedir}/gtk-2.0/gtk/gdkgl/_gdkgl.so
+%{py_sitedir}/gtk-2.0/gtk/gdkgl/__init__.py[co]
+%{py_sitedir}/gtk-2.0/gtk/gdkgl/ext.py[co]
+%dir %{py_sitedir}/gtk-2.0/gtk/gtkgl
+%attr(755,root,root) %{py_sitedir}/gtk-2.0/gtk/gtkgl/_gtkgl.so
+%{py_sitedir}/gtk-2.0/gtk/gtkgl/__init__.py[co]
+%{py_sitedir}/gtk-2.0/gtk/gtkgl/apputils.py[co]
+%{py_sitedir}/gtk-2.0/gtk/gtkgl/widget.py[co]
 
 %files devel
 %defattr(644,root,root,755)
-%{_datadir}/pygtk/2.0/defs/*.defs
-%{_pkgconfigdir}/*.pc
+%{_datadir}/pygtk/2.0/defs/gdkglext*.defs
+%{_datadir}/pygtk/2.0/defs/gtkglext*.defs
+%{_pkgconfigdir}/pygtkglext-1.0.pc
 
 %files examples
 %defattr(644,root,root,755)
