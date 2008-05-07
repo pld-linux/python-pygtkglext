@@ -15,6 +15,7 @@ BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	python-devel >= 2.2
 BuildRequires:	python-pygtk-devel >= 2:2.6.0
+BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
 Requires:	python-pygtk-gtk >= 2:2.6.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
