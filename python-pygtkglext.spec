@@ -2,10 +2,10 @@ Summary:	Python bindings for GtkGLExt library
 Summary(pl.UTF-8):	Wiązania Pythona do biblioteki GtkGLExt
 Name:		python-pygtkglext
 Version:	1.1.0
-Release:	5
+Release:	6
 License:	LGPL
 Group:		Libraries/Python
-Source0:	http://dl.sourceforge.net/gtkglext/pygtkglext-%{version}.tar.bz2
+Source0:	http://downloads.sourceforge.net/gtkglext/pygtkglext-%{version}.tar.bz2
 # Source0-md5:	720b421d3b8514a40189b285dd91de57
 URL:		http://gtkglext.sourceforge.net/
 BuildRequires:	autoconf >= 2.54
@@ -16,7 +16,8 @@ BuildRequires:	pkgconfig
 BuildRequires:	python-devel >= 2.2
 BuildRequires:	python-pygtk-devel >= 2:2.6.0
 BuildRequires:	rpm-pythonprov
-%pyrequires_eq	python-modules
+BuildRequires:	rpmbuild(macros) >= 1.219
+Requires:	python-modules
 Requires:	python-pygtk-gtk >= 2:2.6.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -68,14 +69,16 @@ Przykładowe programy do PyGtkGLExt.
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	pythondir=%{py_sitedir}
 
-cp examples/*.{png,py} $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+%{__rm} $RPM_BUILD_ROOT%{py_sitedir}/gtk-2.0/gtk/gdkgl/_gdkgl.la
+%{__rm} $RPM_BUILD_ROOT%{py_sitedir}/gtk-2.0/gtk/gtkgl/_gtkgl.la
 
-rm -f $RPM_BUILD_ROOT%{py_sitedir}/gtk-2.0/gtk/g[dt]kgl/*.{la,py}
+cp -p examples/*.{png,py} $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+
+%py_postclean
 
 %clean
 rm -rf $RPM_BUILD_ROOT
