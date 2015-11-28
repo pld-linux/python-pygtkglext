@@ -2,7 +2,7 @@ Summary:	Python bindings for GtkGLExt library
 Summary(pl.UTF-8):	Wiązania Pythona do biblioteki GtkGLExt
 Name:		python-pygtkglext
 Version:	1.1.0
-Release:	6
+Release:	7
 License:	LGPL
 Group:		Libraries/Python
 Source0:	http://downloads.sourceforge.net/gtkglext/pygtkglext-%{version}.tar.bz2
